@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "short_links",
+  "info": {
+    "singularName": "short-link",
+    "pluralName": "short-links",
+    "displayName": "ShortLink",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "original_link": {
+      "type": "text",
+      "required": true
+    },
+    "short_link": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "affiliate_link": {
+      "type": "text"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "short_links"
+    }
+  }
+}
